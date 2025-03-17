@@ -7,8 +7,9 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
 
-### --- Function Definitions (Keep these) ---
+### --- Function Definitions ---
 
+#### Preproces Text
 def preprocess_text(text):
     """Lowercase, tokenize, remove stop words and punctuation, and lemmatize."""
     try:
@@ -40,6 +41,8 @@ def preprocess_text(text):
         print(f"Unexpected error in preprocess_text: {e}")
         return []
 
+
+#### Analyze Sentiment
 
 def analyze_sentiment(text, lexicon_df):
     """Analyzes the sentiment of a text using the loaded lexicon data.
@@ -80,7 +83,7 @@ def analyze_sentiment(text, lexicon_df):
 ### --- Main Program: Sentiment Analysis ---
 
 ### Load the *expanded* lexicon from the CSV file
-expanded_lexicon_df = pd.read_csv("expanded_nrc_lexicon.csv")  # Load the SAVED lexicon
+expanded_lexicon_df = pd.read_csv("expanded_nrc_lexicon.csv")
 
 ### Example Usage (using the sample)
 #### text1 = "This is a wonderfully happy and joyful day!"
@@ -90,12 +93,12 @@ expanded_lexicon_df = pd.read_csv("expanded_nrc_lexicon.csv")  # Load the SAVED 
 #### text5 = "He felt abandoned and betrayed by his closest friends.  The injustice of it all made him furious."
 #### text6 = "The looming deadline and the overwhelming workload created a sense of dread and anxiety."
 
-scores1 = analyze_sentiment(text1, expanded_lexicon_df)
-scores2 = analyze_sentiment(text2, expanded_lexicon_df)
-scores3 = analyze_sentiment(text3, expanded_lexicon_df)
-scores4 = analyze_sentiment(text4, expanded_lexicon_df)
-scores5 = analyze_sentiment(text5, expanded_lexicon_df)
-scores6 = analyze_sentiment(text6, expanded_lexicon_df)
+#### scores1 = analyze_sentiment(text1, expanded_lexicon_df)
+#### scores2 = analyze_sentiment(text2, expanded_lexicon_df)
+#### scores3 = analyze_sentiment(text3, expanded_lexicon_df)
+#### scores4 = analyze_sentiment(text4, expanded_lexicon_df)
+#### scores5 = analyze_sentiment(text5, expanded_lexicon_df)
+#### scores6 = analyze_sentiment(text6, expanded_lexicon_df)
 
 
 print(f"Text 1 Scores: {scores1}")
@@ -106,15 +109,15 @@ print(f"Text 5 Scores: {scores5}")
 print(f"Text 6 Scores: {scores6}")
 
 
-print(emotion_lexicon_df[emotion_lexicon_df['word'] == 'grief'])
-print(expanded_lexicon_df[expanded_lexicon_df['word'] == 'sorrow'])
+### print(emotion_lexicon_df[emotion_lexicon_df['word'] == 'grief'])
+### print(expanded_lexicon_df[expanded_lexicon_df['word'] == 'sorrow'])
 
-Text 1 Scores: {'positive': 3, 'negative': 0, 'anger': 0, 'anticipation': 1, 'disgust': 0, 'fear': 0, 'joy': 3, 'sadness': 0, 'surprise': 1, 'trust': 2}
-Text 2 Scores: {'positive': 1, 'negative': 4, 'anger': 4, 'anticipation': 1, 'disgust': 3, 'fear': 3, 'joy': 1, 'sadness': 2, 'surprise': 1, 'trust': 1}
-Text 3 Scores: {'positive': 1, 'negative': 2, 'anger': 2, 'anticipation': 0, 'disgust': 2, 'fear': 2, 'joy': 1, 'sadness': 2, 'surprise': 0, 'trust': 1}
-Text 4 Scores: {'positive': 5, 'negative': 1, 'anger': 0, 'anticipation': 2, 'disgust': 0, 'fear': 2, 'joy': 4, 'sadness': 0, 'surprise': 3, 'trust': 0}
-Text 5 Scores: {'positive': 1, 'negative': 3, 'anger': 3, 'anticipation': 0, 'disgust': 1, 'fear': 1, 'joy': 1, 'sadness': 1, 'surprise': 0, 'trust': 1}
-Text 6 Scores: {'positive': 2, 'negative': 2, 'anger': 1, 'anticipation': 2, 'disgust': 0, 'fear': 2, 'joy': 0, 'sadness': 1, 'surprise': 0, 'trust': 0}
+#### Text 1 Scores: {'positive': 3, 'negative': 0, 'anger': 0, 'anticipation': 1, 'disgust': 0, 'fear': 0, 'joy': 3, 'sadness': 0, 'surprise': 1, 'trust': 2}
+#### Text 2 Scores: {'positive': 1, 'negative': 4, 'anger': 4, 'anticipation': 1, 'disgust': 3, 'fear': 3, 'joy': 1, 'sadness': 2, 'surprise': 1, 'trust': 1}
+#### Text 3 Scores: {'positive': 1, 'negative': 2, 'anger': 2, 'anticipation': 0, 'disgust': 2, 'fear': 2, 'joy': 1, 'sadness': 2, 'surprise': 0, 'trust': 1}
+#### Text 4 Scores: {'positive': 5, 'negative': 1, 'anger': 0, 'anticipation': 2, 'disgust': 0, 'fear': 2, 'joy': 4, 'sadness': 0, 'surprise': 3, 'trust': 0}
+#### Text 5 Scores: {'positive': 1, 'negative': 3, 'anger': 3, 'anticipation': 0, 'disgust': 1, 'fear': 1, 'joy': 1, 'sadness': 1, 'surprise': 0, 'trust': 1}
+#### Text 6 Scores: {'positive': 2, 'negative': 2, 'anger': 1, 'anticipation': 2, 'disgust': 0, 'fear': 2, 'joy': 0, 'sadness': 1, 'surprise': 0, 'trust': 0}
        word  positive  negative  anger  anticipation  disgust  fear  joy  \
 5627  grief         0         1      0             0        0     0    0   
 
