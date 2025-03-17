@@ -83,12 +83,12 @@ def analyze_sentiment(text, lexicon_df):
 expanded_lexicon_df = pd.read_csv("expanded_nrc_lexicon.csv")  # Load the SAVED lexicon
 
 ### Example Usage (using the sample)
-text1 = "This is a wonderfully happy and joyful day!"
-text2 = "I am feeling sad, angry, and filled with fear."
-text3 = "The movie was okay.  It wasn't amazing, but not terrible."
-text4 = "The unexpected gift filled me with joy and surprise! I was so grateful."
-text5 = "He felt abandoned and betrayed by his closest friends.  The injustice of it all made him furious."
-text6 = "The looming deadline and the overwhelming workload created a sense of dread and anxiety."
+#### text1 = "This is a wonderfully happy and joyful day!"
+#### text2 = "I am feeling sad, angry, and filled with fear."
+#### text3 = "The movie was okay.  It wasn't amazing, but not terrible."
+#### text4 = "The unexpected gift filled me with joy and surprise! I was so grateful."
+#### text5 = "He felt abandoned and betrayed by his closest friends.  The injustice of it all made him furious."
+#### text6 = "The looming deadline and the overwhelming workload created a sense of dread and anxiety."
 
 scores1 = analyze_sentiment(text1, expanded_lexicon_df)
 scores2 = analyze_sentiment(text2, expanded_lexicon_df)
