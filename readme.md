@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import string
 
-# --- Function Definitions (Keep these) ---
+### --- Function Definitions (Keep these) ---
 
 def preprocess_text(text):
     """Lowercase, tokenize, remove stop words and punctuation, and lemmatize."""
@@ -75,12 +75,12 @@ def analyze_sentiment(text, lexicon_df):
                 emotion_scores[emotion] += int(word_row[emotion])
 
     return emotion_scores
-# --- Main Program: Sentiment Analysis ---
+### --- Main Program: Sentiment Analysis ---
 
-# Load the *expanded* lexicon from the CSV file
+### Load the *expanded* lexicon from the CSV file
 expanded_lexicon_df = pd.read_csv("expanded_nrc_lexicon.csv")  # Load the SAVED lexicon
 
-# Example Usage (using the sample)
+### Example Usage (using the sample)
 text1 = "This is a wonderfully happy and joyful day!"
 text2 = "I am feeling sad, angry, and filled with fear."
 text3 = "The movie was okay.  It wasn't amazing, but not terrible."
@@ -88,7 +88,7 @@ text4 = "The unexpected gift filled me with joy and surprise! I was so grateful.
 text5 = "He felt abandoned and betrayed by his closest friends.  The injustice of it all made him furious."
 text6 = "The looming deadline and the overwhelming workload created a sense of dread and anxiety."
 
-scores1 = analyze_sentiment(text1, expanded_lexicon_df)  # Use expanded lexicon
+scores1 = analyze_sentiment(text1, expanded_lexicon_df)
 scores2 = analyze_sentiment(text2, expanded_lexicon_df)
 scores3 = analyze_sentiment(text3, expanded_lexicon_df)
 scores4 = analyze_sentiment(text4, expanded_lexicon_df)
