@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Output files (adjust if your paths/names are different)
+*.csv
+*.log
+# If meeting_analysis_results_belbin_only.csv is your OUTPUT file, add it specifically
+meeting_analysis_results_belbin_only.csv
+analysis_log.txt
+
+# Environment folders (if you use one)
+venv/
+.venv/
+env/
+ENV/
+
+# IDE / Editor specific files (examples)
+.vscode/
+.idea/
+
+# IMPORTANT: Security - If config.py contains sensitive keys
+# Uncomment the next line ONLY if you DON'T want config.py in Git AT ALL
+config.py 
+# Alternatively, keep config.py but ensure keys are replaced with placeholders
+# BEFORE pushing to a PUBLIC repository.
